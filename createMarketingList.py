@@ -52,7 +52,11 @@ for line in csv_obj:
 
     cus_dict['full_name'] = line[2] + line[3]
 
-    print(line)
+    cus_dict['full_name']['email'] = line[5]
+
+    cus_dict['full_name']['phone'] = line[6]
+
+   
 
     # add the key-value pair to the dictionary
 
@@ -60,11 +64,15 @@ for line in csv_obj:
 
 # print the dictionary after the loop is finished
 
-
+    print(cus_dict)
 
 # iternate through the dictionary and write to the output file
 
+for k,v in cus_dict.items():
+
+    outfile.write(f'{k},{v}')
 
 
 # close your output file
 
+outfile.close()

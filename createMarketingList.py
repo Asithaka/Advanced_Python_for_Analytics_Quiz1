@@ -26,24 +26,31 @@ import csv
 
 # open the vendorlist file
 
-
+infile = open('VendorList.csv','r')
+cust_list =list(infile)
 # create a csv object from the file object
 
+csv_obj = infile.read()
+
+next(csv_obj)
 
 # create an output file
 
-
-
-
+outfile = open('marketinglistFINAL.csv','w')
 
 # create an empty dictionary
 
-
+cus_dict = {}
 
 # iterate through the csv object
 
+for line in cust_list:
 
+    #new_line = line
 
+    #cus_dict['full_name'] = line[2] + line[3]
+
+    print(line)
 
     # add the key-value pair to the dictionary
 

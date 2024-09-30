@@ -27,12 +27,14 @@ import csv
 # open the vendorlist file
 
 infile = open('VendorList.csv','r')
-cust_list =list(infile)
+
 # create a csv object from the file object
 
 csv_obj = infile.read()
 
 next(csv_obj)
+
+cust_list = list(csv_obj)
 
 # create an output file
 
@@ -44,11 +46,11 @@ cus_dict = {}
 
 # iterate through the csv object
 
-for line in cust_list:
+for line in csv_obj:
 
-    #new_line = line
+    new_line = line.split()
 
-    #cus_dict['full_name'] = line[2] + line[3]
+    cus_dict['full_name'] = line[2] + line[3]
 
     print(line)
 
